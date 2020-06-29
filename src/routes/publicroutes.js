@@ -5,6 +5,7 @@ import Faild from '../pages/Fail';
 import Confirm from '../pages/Confirm';
 import Profile from '../pages/Profile';
 import Password from '../pages/PasswordReset';
+import Test from '../pages/Test';
 
 const publicRoutes = [
   {
@@ -41,6 +42,11 @@ const publicRoutes = [
   {
     path: '/profile',
     component: Profile,
+    exact: true,
+  },
+  {
+    path: '/test',
+    component: Test,
     exact: true,
   },
 ];
