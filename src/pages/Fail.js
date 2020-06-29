@@ -1,25 +1,25 @@
-import React, { Component } from "react";
-import PublicLayout from "../components/layouts/publicLayout";
-import Complete from "../assets/images/Complete.png";
-import failed from "../assets/icons/Failed.svg";
-import {withStyles} from "@material-ui/styles";
-import Grid from "@material-ui/core/Grid";
-import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
+import React, { Component } from 'react';
+import PublicLayout from '../components/layouts/publicLayout';
+import Complete from '../assets/images/Complete.png';
+import failed from '../assets/icons/Failed.svg';
+import { withStyles } from '@material-ui/styles';
+import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
 
 const styles = (theme) => ({
   logo: {
-    width: "159px",
-    height: "38px",
-    border: "0",
-    marginBottom: "50px",
+    width: '159px',
+    height: '38px',
+    border: '0',
+    marginBottom: '50px',
   },
   cart: {
-    maxWidth: "430px",
-    width: "100%",
-    alignItems: "center",
-    display: "flex",
-    flexDirection: "column",
+    maxWidth: '430px',
+    width: '100%',
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'column',
   },
   forgotText: {
     fontSize: '14px',
@@ -49,7 +49,7 @@ const styles = (theme) => ({
 class Uncompleted extends Component {
   constructor(props) {
     super(props);
-    this.state = {}
+    this.state = {};
   }
 
   render() {
@@ -65,18 +65,25 @@ class Uncompleted extends Component {
           <img src={failed} alt="failed" className={classes.failed} />
           <form className={classes.formCart}>
             <Grid container item xs={12} sm={12} md={12} lg={12}>
-              <h3 className={classes.heading}>Your account creation is failed!</h3>
+              <h3 className={classes.heading}>
+                Your account creation is failed!
+              </h3>
               <Box className={classes.forgotText}>
                 Please check your information and try again.
               </Box>
             </Grid>
-            <Button fullWidth type={'submit'} variant="contained" color="primary">
+            <Button
+              fullWidth
+              type={'submit'}
+              variant="contained"
+              color="primary"
+            >
               GO BACK
             </Button>
           </form>
         </div>
       </PublicLayout>
-    )
+    );
   }
 }
 
