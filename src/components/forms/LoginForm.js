@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import InputField from '../core/Input';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import Button from '@material-ui/core/Button';
+import Button from '../core/Button';
 
 const useStyles = makeStyles(() =>
   createStyles({
@@ -82,7 +82,7 @@ const LoginForm = (props) => {
         />
       </Grid>
 
-      <Button fullWidth type={'submit'} variant="contained" color="primary">
+      <Button type={'submit'} color={'primary'} >
         Login
       </Button>
       <Grid container item xs={12} sm={12} md={12} lg={12}>

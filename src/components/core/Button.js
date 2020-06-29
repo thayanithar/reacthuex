@@ -1,23 +1,27 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Button } from '@material-ui/core';
+import { Button as HuexButton } from '@material-ui/core';
+
 const styles = () => ({
   button: {
     widht: '100px',
     height: '100px',
   },
+  text: {
+    color: '#FFFFFF',
+  },
 });
-const Buttons = ({ classes, ...rest }) => {
+
+const Button = ({ classes, ...rest }) => {
   return (
-    <div className={classes.button}>
-      <Button
-        color="primary"
-        variant="contained"
-        type={'submit'}
-        fullWidth
-        {...rest}
-      />
-    </div>
+    <HuexButton
+      classes={{
+        label: classes.text,
+      }}
+      variant="contained"
+      fullWidth
+      {...rest}
+    />
   );
 };
-export default withStyles(styles)(Buttons);
+export default withStyles(styles)(Button);
