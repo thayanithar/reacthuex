@@ -4,7 +4,7 @@ import Complete from '../pages/Complete';
 import Faild from '../pages/Fail';
 import Confirm from '../pages/Confirm';
 import Profile from '../pages/Profile';
-import Password from '../pages/Password';
+import Password from '../pages/PasswordReset';
 
 const publicRoutes = [
   {

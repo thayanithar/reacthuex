@@ -20,7 +20,7 @@ const styles = () => ({
   },
 });
 
-class Password extends Component {
+class PasswordReset extends Component {
   constructor(props) {
     super(props);
     this.state = {};
@@ -43,4 +43,4 @@ class Password extends Component {
   }
 }
 
-export default withStyles(styles)(Password);
+export default withStyles(styles)(PasswordReset);
