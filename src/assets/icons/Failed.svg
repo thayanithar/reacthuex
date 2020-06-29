@@ -1,0 +1,9 @@
+<svg id="Failed" xmlns="http://www.w3.org/2000/svg" width="74" height="74" viewBox="0 0 74 74">
+  <g id="Base" fill="#fff" stroke="#ff7a7a" stroke-width="2">
+    <circle cx="37" cy="37" r="37" stroke="none"/>
+    <circle cx="37" cy="37" r="36" fill="none"/>
+  </g>
+  <g id="close_1_" data-name="close (1)" transform="translate(25 24.999)">
+    <path id="Path_438" data-name="Path 438" d="M14.123,12l9.438-9.438A1.5,1.5,0,1,0,21.439.441L12,9.879,2.562.441A1.5,1.5,0,0,0,.44,2.563L9.878,12,.44,21.439a1.5,1.5,0,1,0,2.122,2.122L12,14.123l9.438,9.438a1.5,1.5,0,0,0,2.122-2.122Z" transform="translate(0)" fill="#ff7a7a" stroke="#ff7a7a" stroke-width="1"/>
+  </g>
+</svg>
