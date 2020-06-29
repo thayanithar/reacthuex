@@ -41,8 +41,8 @@ const SignupForm = () => {
       password: Yup.string()
         .min(6, 'minimum 6 characters')
         .required('Required'),
+      phone_number: Yup.string().required('Required'),
     }),
-
     onSubmit: (values) => {
       console.log(values);
     },
@@ -116,15 +116,15 @@ const SignupForm = () => {
         <InputField
           id={'phone_number'}
           name={'phone_number'}
-          type={'number'}
+          type={'text'}
           label={'Phone Number'}
           placeholder={'Enter Your Phone Number'}
-          error={Boolean(formik.errors.password) && formik.touched.password}
-          errorMessage={formik.errors.password}
-          value={formik.values.password}
+          error={Boolean(formik.errors.phone_number) && formik.touched.phone_number}
+          errorMessage={formik.errors.phone_number}
+          value={formik.values.phone_number}
           fullWidth
-          getValue={(vaule) => formik.setFieldValue('password', vaule)}
-          onBlur={() => formik.setFieldTouched('password')}
+          getValue={(vaule) => formik.setFieldValue('phone_number', vaule)}
+          onBlur={() => formik.setFieldTouched('phone_number')}
         />
       </Grid>
       <Grid container item xs={12} sm={12} md={12} lg={12}>
