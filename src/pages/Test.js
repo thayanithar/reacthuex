@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import PublicLayout from '../components/layouts/publicLayout';
 import signinImage from '../assets/images/Signin.png';
 import logo from '../assets/logos/Logo.png';
-import TestForm from '../components/forms/TestForm';
 import { withStyles } from '@material-ui/styles';
+import InputField from '../components/core/Input';
+import {push} from 'lodash';
 const styles = (theme) => ({
   logo: {
     width: '159px',
@@ -26,7 +27,6 @@ class Test extends Component {
       emailid:['zajith@huex.studio', 'gobi@huex.studio', 'chanthan@huex.studio'],
       initialValues: {
         email:'',
-        password: '',
       },
     };
   }
@@ -43,13 +43,21 @@ class Test extends Component {
         title="Standard Catalogued Data"
         text="Large volumes of diverse data systematically categorized based on distinct criteria for easy and effective filtering of the necessary information."
       >
-        <TestForm/>
+
         <div>
+
           <ul>{this.state.emailid.map((value,index) => <li key={ index }>{ value }</li>)}
           </ul>
 
-          <button onClick={ this.addNew }>Submit</button>
+          <InputField
+            id={'email'}
+            name={'email'}
+            type={'text'}
+            label={'Email'}
+            placeholder={'Enter email address'}
+          />
         </div>
+
       </PublicLayout>
     );
   }
