@@ -82,7 +82,7 @@ const LoginForm = (props) => {
         />
       </Grid>
 
-      <Button type={'submit'} color={'primary'} >
+      <Button type={'submit'} color={'primary'}>
         Login
       </Button>
       <Grid container item xs={12} sm={12} md={12} lg={12}>

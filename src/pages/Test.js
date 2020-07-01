@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import {isEmpty} from 'lodash'
-import LodashTest from "../components/forms/LodashTest";
+import React, { Component } from 'react';
+import { isEmpty } from 'lodash';
+import LodashTest from '../components/forms/LodashTest';
 class Test extends Component {
   constructor(props) {
     super(props);
@@ -15,29 +15,28 @@ class Test extends Component {
       };
     });
   };
-  delete(item){
+  delete(item) {
     const newState = this.state.userEmails.slice();
     if (newState.indexOf(item) > -1) {
       newState.splice(newState.indexOf(item), 1);
-      this.setState({userEmails: newState})
+      this.setState({ userEmails: newState });
     }
   }
   render() {
-    const {userEmails} = this.state;
+    const { userEmails } = this.state;
     return (
       <div>
-        <LodashTest
-          getFormValue={values => this.addEmail(values)}
-        />
+        <LodashTest getFormValue={(values) => this.addEmail(values)} />
         {isEmpty(userEmails) && <h1>emails not found!</h1>}
-        {!isEmpty(userEmails) && userEmails.map((item, index) => {
-          return (
-            <div>
-              {item} - {index}
-              <button onClick={this.delete.bind(this, item)}>Delete</button>
-            </div>
-          )
-        }) }
+        {!isEmpty(userEmails) &&
+          userEmails.map((item, index) => {
+            return (
+              <div>
+                {item} - {index}
+                <button onClick={this.delete.bind(this, item)}>Delete</button>
+              </div>
+            );
+          })}
       </div>
     );
   }
