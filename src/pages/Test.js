@@ -1,65 +1,45 @@
-import React, { Component } from 'react';
-import PublicLayout from '../components/layouts/publicLayout';
-import signinImage from '../assets/images/Signin.png';
-import logo from '../assets/logos/Logo.png';
-import { withStyles } from '@material-ui/styles';
-import InputField from '../components/core/Input';
-import {push} from 'lodash';
-const styles = (theme) => ({
-  logo: {
-    width: '159px',
-    height: '38px',
-    border: '0',
-    marginBottom: '50px',
-  },
-  cart: {
-    maxWidth: '430px',
-    width: '100%',
-    alignItems: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-  },
-});
+import React, { Component } from "react";
+import {isEmpty} from 'lodash'
+import LodashTest from "../components/forms/LodashTest";
 class Test extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      emailid:['zajith@huex.studio', 'gobi@huex.studio', 'chanthan@huex.studio'],
-      initialValues: {
-        email:'',
-      },
+      userEmails: [],
     };
   }
-  addNew=() =>{
-    const newEmail='nitharthaya123@gmail.com';
-    this.setState({emailid:[...this.state.emailid,newEmail] });
+  addEmail = (abc) => {
+    this.setState((state) => {
+      return {
+        userEmails: [...state.userEmails, abc.email],
+      };
+    });
+  };
+  delete(item){
+    const newState = this.state.userEmails.slice();
+    if (newState.indexOf(item) > -1) {
+      newState.splice(newState.indexOf(item), 1);
+      this.setState({userEmails: newState})
+    }
   }
   render() {
-    const { classes } = this.props;
-    const { initialValues } = this.state;
+    const {userEmails} = this.state;
     return (
-      <PublicLayout
-        image={signinImage}
-        title="Standard Catalogued Data"
-        text="Large volumes of diverse data systematically categorized based on distinct criteria for easy and effective filtering of the necessary information."
-      >
-
-        <div>
-
-          <ul>{this.state.emailid.map((value,index) => <li key={ index }>{ value }</li>)}
-          </ul>
-
-          <InputField
-            id={'email'}
-            name={'email'}
-            type={'text'}
-            label={'Email'}
-            placeholder={'Enter email address'}
-          />
-        </div>
-
-      </PublicLayout>
+      <div>
+        <LodashTest
+          getFormValue={values => this.addEmail(values)}
+        />
+        {isEmpty(userEmails) && <h1>emails not found!</h1>}
+        {!isEmpty(userEmails) && userEmails.map((item, index) => {
+          return (
+            <div>
+              {item} - {index}
+              <button onClick={this.delete.bind(this, item)}>Delete</button>
+            </div>
+          )
+        }) }
+      </div>
     );
   }
 }
-export default withStyles(styles)(Test);
+export default Test;
