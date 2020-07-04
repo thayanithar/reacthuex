@@ -1,30 +1,21 @@
 import React, { Component } from 'react';
-import { isEmpty } from 'lodash';
-import MomentFild from '../components/forms/MomentFild';
+// import moment from 'moment'
+import moment from 'moment';
+import KeyboardDatePickerExample from '../components/forms/MomentFild';
+
 class Moment extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      userDate: [],
-    };
+    this.state = {  }
   }
-
-  render() {
-    const { userDate } = this.state;
+  render(props) {
     return (
       <div>
-        <MomentFild getFormValue={(values) => this.addDate(values)} />
-        {isEmpty(userDate) && <h1>date is not found!</h1>}
-        {!isEmpty(userDate) &&
-          userDate.map((item, index) => {
-            return (
-              <div>
-                {item} - {index}
-              </div>
-            );
-          })}
+        {console.log( moment("2010-10-20 4:30",       "YYYY-MM-DD HH:mm"))}
+        <KeyboardDatePickerExample/>
       </div>
     );
   }
 }
+
 export default Moment;
