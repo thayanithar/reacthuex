@@ -7,7 +7,6 @@ import Profile from '../pages/Profile';
 import Password from '../pages/PasswordReset';
 import Test from '../pages/Test';
 import Moment from '../pages/Moment';
-
 const publicRoutes = [
   {
     path: '/signup',
