@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
+import { createMuiTheme, ThemeProvider, useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -10,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     height: '100vh',
   },
   image: {
-    [theme.breakpoints.up('md')]: {
+    [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
     display: 'none',
@@ -41,6 +43,8 @@ const useStyles = makeStyles((theme) => ({
 
 function PublicLayout(props) {
   const classes = useStyles(props);
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('sm'));
 
   return (
     <Grid
@@ -50,18 +54,16 @@ function PublicLayout(props) {
         root: classes.root,
       }}
     >
-      ​ ​
-      <Grid item sm={false} md={6} className={classes.image}>
+      {matches && <Grid item sm={12} md={6} >
         <div className={classes.container}>
           <Box align="center" px={10}>
-            <img alt={props.title} src={props.image} className={classes.img} />
+            <img alt={props.title} src={props.image} className={classes.img}/>
             <Typography variant="h5">{props.title}</Typography>
             <Typography variant="subtitle1">{props.text}</Typography>
           </Box>
         </div>
-      </Grid>
-      ​ ​ ​
-      <Grid item xs={6} className={classes.container}>
+      </Grid>}
+      <Grid item xs={12}  md={6} className={classes.container}>
         {props.children}
       </Grid>
     </Grid>

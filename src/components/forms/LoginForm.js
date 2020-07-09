@@ -7,8 +7,7 @@ import InputField from '../core/Input';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Button from '../core/Button';
-
-const useStyles = makeStyles(() =>
+const useStyles = makeStyles((theme) =>
   createStyles({
     forgotText: {
       fontSize: '14px',
@@ -27,6 +26,12 @@ const useStyles = makeStyles(() =>
     formCart: {
       maxWidth: '430px',
       width: '100%',
+      [theme.breakpoints.down('sm')]: {
+        maxWidth: '100%',
+        '& > :nth-child(n+1)': {
+          padding: '0 16px',
+        },
+      },
     },
   })
 );
@@ -81,10 +86,11 @@ const LoginForm = (props) => {
           onBlur={() => formik.setFieldTouched('password')}
         />
       </Grid>
-
-      <Button type={'submit'} color={'primary'}>
-        Login
-      </Button>
+      <Grid container item xs={12} sm={12} md={12} lg={12}>
+        <Button type={'submit'} color={'primary'}>
+          Login
+        </Button>
+      </Grid>
       <Grid container item xs={12} sm={12} md={12} lg={12}>
         <Box className={classes.forgotText}>
           Forgot password? <Link to={'/forgot-password'}>RESET</Link>

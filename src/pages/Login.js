@@ -5,6 +5,7 @@ import logo from '../assets/logos/Logo.png';
 import LoginForm from '../components/forms/LoginForm';
 import { withStyles } from '@material-ui/styles';
 
+
 const styles = () => ({
   logo: {
     width: '159px',
@@ -13,7 +14,6 @@ const styles = () => ({
     marginBottom: '50px',
   },
   cart: {
-    maxWidth: '430px',
     width: '100%',
     alignItems: 'center',
     display: 'flex',

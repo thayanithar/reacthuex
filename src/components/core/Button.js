@@ -5,7 +5,7 @@ import { Button as HuexButton } from '@material-ui/core';
 const styles = () => ({
   button: {
     widht: '100px',
-    height: '100px',
+    height: '10px',
   },
   text: {
     color: '#FFFFFF',
